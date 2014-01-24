@@ -6,9 +6,12 @@ NkuRails::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'welcome#index'
 
-  post GET    /posts/:id(.:format)      posts#show
-  DELETE /posts/:id(.:format)      posts#destroy
-  posts GET    /posts(.:format)          posts#index
+#  post GET    /posts/:id(.:format)      posts#show
+#end
+# DELETE /posts/:id(.:format)      posts#destroy
+#end
+#  posts GET    /posts/(.:format)          posts#index
+#end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
