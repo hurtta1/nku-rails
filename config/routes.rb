@@ -7,7 +7,9 @@ NkuRails::Application.routes.draw do
    root 'welcome#index'
 
   post GET    /posts/:id(.:format)      posts#show
+  DELETE /posts/:id(.:format)      posts#destroy
   posts GET    /posts(.:format)          posts#index
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
