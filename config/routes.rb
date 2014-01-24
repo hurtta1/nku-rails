@@ -63,4 +63,5 @@ NkuRails::Application.routes.draw do
   #   end
   resources :posts do
   resources :comments
+  end
 end
