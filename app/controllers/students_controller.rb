@@ -7,7 +7,7 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   end
   
   def create
-    @student = Student.new(params[:student].permit(:Name))
+    @student = Student.new(params[:student].permit(:Name, :Nickname, :Email, :Gravitar))
     if @student.save
       redirect_to @student
     else
@@ -29,7 +29,7 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   
   def update
     @student = Student.find(params[:id])
-    if @student.update(params[:student].permit(:Name))
+    if @student.update(params[:student].permit(:Name, :Nickname, :Email, :Gravitar))
       redirect_to @student
     else
       render 'edit'
@@ -43,6 +43,6 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   end
  private  
   def student_params
-    params.require(:student).permit(:Name)
+    params.require(:student).permit(:Name, :Nickname, :Email, :Gravitar)
   end
 end

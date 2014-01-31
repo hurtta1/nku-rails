@@ -1,0 +1,15 @@
+<h1>Teachers</h1>
+<table>
+  <tr>
+    <th><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+        <%= link_to 'Back to CSC Projects Home', welcome_index_path %><p><p/></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @teacher.each do |student| %>
+  <tr><br/>
+    <td><%= student.Name %></td>
+  </tr>
+<% end %>
+</table>

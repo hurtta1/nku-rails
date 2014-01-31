@@ -1,18 +1,12 @@
 <p>
   <strong>Name:</strong>
-  <%= @student.name %>
+  <%= @student.Name %>
 </p>
  
 <p>
   <strong>Nickname:</strong>
-  <%= @student.nickname %>
+  <%= @student.Nickname %>
 </p>
- 
-<h2>Comments</h2>
-<%= render @student.comments %>
- 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
- 
+<p></p>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

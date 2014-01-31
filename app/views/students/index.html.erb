@@ -1,8 +1,8 @@
 <h1>Students</h1>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+        <%= link_to 'Back to CSC Projects Home', welcome_index_path %><p><p/></th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,11 +10,10 @@
  
 <% @student.each do |student| %>
   <tr>
-    <td><%= student.name %></td>
-    <td><%= link_to 'New', new_student_path(student) %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Delete Student', student_path(student),
-  method: :delete, data: { confirm: 'Are you sure?' } %></td><p></p>
+    <td><br/><%= student.Name %><br/>
+        <%= link_to 'Edit', edit_student_path(student) %>
+      <%= link_to 'Delete Student', student_path(student),
+  method: :delete, data: { confirm: 'Are you sure?' } %><br/></td>
   </tr>
 <% end %>
 </table>
