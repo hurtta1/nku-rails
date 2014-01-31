@@ -1,6 +1,6 @@
 NkuRails::Application.routes.draw do
   get "welcome/index"
-   resources :posts
+  resources :posts, :students
    root 'welcome#index'
   get    '/posts/:id(.:format)'  =>   'posts#show'
  get    '/posts(.:format)'       =>   'posts#index'
