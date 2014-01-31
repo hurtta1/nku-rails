@@ -4,6 +4,8 @@ NkuRails::Application.routes.draw do
    root 'welcome#index'
   get    '/posts/:id(.:format)'  =>   'posts#show'
  get    '/posts(.:format)'       =>   'posts#index'
+  get    '/students/:id(.:format)'  =>   'students#show'
+  get    '/students(.:format)'       =>   'students#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
