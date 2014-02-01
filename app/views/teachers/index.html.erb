@@ -8,8 +8,9 @@
   </tr>
  
 <% @teacher.each do |student| %>
-  <tr><br/>
-    <td><%= student.Name %></td>
+  <tr><%= 'Name: '+student.Name %><br/>
+       <%= 'Nickname: '+student.Nickname %><br/>
+    <%= 'Email: '+student.Email %><br/><p></p>
   </tr>
 <% end %>
 </table>

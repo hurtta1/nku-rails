@@ -9,7 +9,7 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   def create
     @student = Student.new(params[:student].permit(:Name, :Nickname, :Email, :Gravitar))
     if @student.save
-      redirect_to @student
+      redirect_to student_path
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   def update
     @student = Student.find(params[:id])
     if @student.update(params[:student].permit(:Name, :Nickname, :Email, :Gravitar))
-      redirect_to @student
+      redirect_to students_path, :flash => {:notice => 'You have succesfully updated your account'}
     else
       render 'edit'
     end
