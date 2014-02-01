@@ -10,7 +10,7 @@
 <% @student.each do |student| %>
   <tr>
     <td><br/>
-       <%= image_tag gravitar_url(student) %><br/>
+       <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
        <%= 'Name: '+student.Name %><br/>
        <%= 'Nickname: '+student.Nickname %><br/>
        <%= 'Email: '+student.Email %><br/>
