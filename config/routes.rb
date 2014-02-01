@@ -4,7 +4,7 @@ NkuRails::Application.routes.draw do
    root 'welcome#index'
   get    '/posts/:id(.:format)'  =>   'posts#show'
  get    '/posts(.:format)'       =>   'posts#index'
-  #get    '/students/:id(.:format)'  =>   'students#show'
+  get    '/students/:id(.:format)'  =>   'students#show'
   get    '/students(.:format)'       =>   'students#index'
   get    '/teachers(.:format)'       =>   'teachers#index'
   get    '/bueller(.:format)'       =>   'bueller#index'

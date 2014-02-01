@@ -9,7 +9,7 @@ http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :
   def create
     @student = Student.new(params[:student].permit(:Name, :Nickname, :Email, :Gravitar))
     if @student.save
-      redirect_to student_path
+      redirect_to students_path
     else
       render 'new'
     end
