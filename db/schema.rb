@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20140131211507) do
     t.string   "Nickname"
     t.string   "Email"
     t.string   "Gravitar"
+    t.string   "password"
+    t.string   "confirm"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

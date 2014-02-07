@@ -5,6 +5,8 @@ class CreateStudent < ActiveRecord::Migration
       t.string :Nickname
       t.string :Email
       t.string :Gravitar
+      t.string :password
+      t.string :confirm
       t.timestamps
     end
   end
