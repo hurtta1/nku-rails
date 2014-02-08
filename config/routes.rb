@@ -1,13 +1,21 @@
 NkuRails::Application.routes.draw do
   get "welcome/index"
-  resources :posts, :students, :bueller, :teachers
+  resources :posts, :students, :bueller, :teachers, :signin
    root 'welcome#index'
-  get    '/posts/:id(.:format)'  =>   'posts#show'
- get    '/posts(.:format)'       =>   'posts#index'
-  get    '/students/:id(.:format)'  =>   'students#show'
-  get    '/students(.:format)'       =>   'students#index'
-  get    '/teachers(.:format)'       =>   'teachers#index'
-  get    '/bueller(.:format)'       =>   'bueller#index'
+
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "students#new", :as => "signup"
+  #root :to => "students#new"
+  resources :students
+  resources :sessions
+
+#  get    '/posts/:id(.:format)'  =>   'posts#show'
+ #get    '/posts(.:format)'       =>   'posts#index'
+ # get    '/students/:id(.:format)'  =>   'students#show'
+ # get    '/students(.:format)'       =>   'students#index'
+ # get    '/teachers(.:format)'       =>   'teachers#index'
+ # get    '/bueller(.:format)'       =>   'bueller#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
