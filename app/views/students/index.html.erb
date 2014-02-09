@@ -1,19 +1,19 @@
 <h1>Students</h1>
 <table>
   <tr>
-    <th><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-        <%= link_to 'Back to CSC Projects Home', welcome_index_path %><p><p/></th>
+    <th><%= link_to 'Sign In', sessions_path %><br/><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><%= link_to 'Logout', sessions_path%> <p><p/></th>
     <th></th>
     <th></th>
   </tr>
  
 <% @student.each do |student| %>
   <tr>
-    <td><br/>
-       <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
-       <%= 'Name: '+student.Name %><br/>
-       <%= 'Nickname: '+student.Nickname %><br/>
-       <%= 'Email: '+student.Email %><br/>
+   <td><br/>
+      <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+      Name: <%= student.name %><br/>
+      Nickname: <%= student.nickname %><br/>
+      Email: <%= student.email %><br/>
        <%= link_to 'Edit', edit_student_path(student) %>
        <%= link_to 'Delete Student', student_path(student),
   method: :delete, data: { confirm: 'Are you sure?' } %><br/></td>

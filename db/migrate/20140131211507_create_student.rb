@@ -1,10 +1,10 @@
 class CreateStudent < ActiveRecord::Migration
   def change
     create_table :students do |t|
-      t.string :Name
-      t.string :Nickname
-      t.string :Email
-      t.string :Gravitar
+      t.string :name
+      t.string :nickname
+      t.string :email
+      t.string :gravitar
       t.string :password
       t.string :password_digest
       t.string :password_confirmation
