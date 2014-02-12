@@ -2,7 +2,7 @@
 <table>
   <tr>
     <th><%= link_to 'Sign In', sessions_path %><br/><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><%= link_to 'Logout', sessions_path%> <p><p/></th>
+      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><%= link_to 'Logout', session_path(session),method: :delete %> <p><p/></th>
     <th></th>
     <th></th>
   </tr>

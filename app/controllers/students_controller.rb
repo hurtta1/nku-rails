@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   
   def update
     @student = Student.find(params[:id])
-    #return false unless @student == current_student
+    return false unless @student == current_student
     if @student.update(params[:student].permit(:name, :nickname, :email, :gravitar, :password, :password_confirmation))
       redirect_to students_path, :flash => {:notice => 'You have succesfully updated your account'}
     else
