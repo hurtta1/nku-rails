@@ -1,3 +1,3 @@
 class Attendance < ActiveRecord::Base
-  belongs_to :attendances
+  belongs_to :student
 end

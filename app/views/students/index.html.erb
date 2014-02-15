@@ -1,7 +1,7 @@
 <h1>Students</h1>
 <table>
   <tr>
-    <th><%= link_to 'Sign In', sessions_path %><br/><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+    <th><%= link_to 'Sign In', new_session_path %><br/><%= link_to 'New Student', new_student_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
       <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><%= link_to 'Logout', session_path(session),method: :delete %> <p><p/></th>
     <th></th>
     <th></th>
@@ -15,6 +15,7 @@
       Nickname: <%= student.nickname %><br/>
       Email: <%= student.email %><br/>
        <%= link_to 'Edit', edit_student_path(student) %>
+       <%= link_to 'I\'m here', attendance_path(student) %>
        <%= link_to 'Delete Student', student_path(student),
   method: :delete, data: { confirm: 'Are you sure?' } %><br/></td>
   </tr>

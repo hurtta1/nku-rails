@@ -4,6 +4,7 @@ class Attendance < ActiveRecord::Migration
       t.string :attendances
       t.string :attended_on
       t.integer :seat
+      y.integer :count
     end
   end
 end

@@ -2,8 +2,8 @@ require 'spec_helper'
 
 FactoryGirl.define do
   factory :student do
-    sequence(:Name) {|n| "Student Name #{n}"}
-    sequence(:Email) {|n| "test-#{n}@example.com"}
+    sequence(:name) {|n| "Student Name #{n}"}
+    sequence(:email) {|n| "test-#{n}@example.com"}
     password "password"
     password_confirmation "password"
   end
@@ -11,6 +11,7 @@ end
 
 describe Student do
   let(:now) { Date.today }
+  @student = Student;
 
   describe ".in_seat" do
     let!(:student_in_seat_1) do
