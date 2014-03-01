@@ -4,6 +4,7 @@ ruby "2.0.0"
 gem 'bcrypt-ruby', '3.1.2'
 gem 'devise', '3.0.0.rc'
 gem 'protected_attributes'
+gem 'debugger'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -19,9 +20,8 @@ gem 'jquery-rails'
 
 gem 'factory_girl_rails', '4.0.0'
 
-group :development, :test do
+
   gem 'byebug'
-end
 
 group :test do
   gem 'rspec-rails'

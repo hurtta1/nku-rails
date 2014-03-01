@@ -10,6 +10,7 @@ NkuRails::Application.routes.draw do
   resources :students
   resources :sessions
   resources :session
+  resources :attendances
 
 #  get    '/posts/:id(.:format)'  =>   'posts#show'
  #get    '/posts(.:format)'       =>   'posts#index'

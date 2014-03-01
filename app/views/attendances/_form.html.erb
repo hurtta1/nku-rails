@@ -1,8 +1,8 @@
 <%= form_for @attendance do |f| %>
-  <% if @attendance.errors.any? %>
+   <% if @attendance.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@attendance.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
+      this attendance from being saved:</h2>
     <ul>
     <% @attendance.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -10,10 +10,12 @@
     </ul>
   </div>
   <% end %>
+
   <p>
-    <%= f.label :Seat  %><br>
-    <%= f.text_field :seat %>
+    <%= f.label :seat %><br>
+    <%= number_field_tag :seat %>
   </p>
+
   <p>
     <%= f.submit %>
   </p>

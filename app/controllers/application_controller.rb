@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 private
 
   def current_student
-    @current_student ||= Student.find(session[:student_id]) if session[:student_id]
+    @current_student ||= Student.find_by(id: session[:student_id]) if session[:student_id].present?
   end
   helper_method :current_student
 end

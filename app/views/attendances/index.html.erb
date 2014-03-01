@@ -1,19 +1,15 @@
-<h1>Attendances</h1>
+<h1>Attendance</h1>
+<% if current_student %>
+<br/>
+<br/>
+<%= link_to "Back", students_path %>
+<br/>
+<% end %>
 <table>
-  <tr>
-    <th><%= link_to 'Back to Students', students_index_path %><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><%= link_to 'Logout', session_path(session),method: :delete %> <p><p/></th>
-    <th></th>
-    <th></th>
-  </tr>
- 
-<% @student.each do |student| %>
-  <tr>
-   <td><br/>
-      <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
-      Name: <%= student.name %><br/>
-      Email: <%= student.email %><br/>
-
-  </tr>
+<% @attendances.each do |attendance| %>
+  <tr><td><br/></td></tr>
+  <tr><td>Student: </td><td><%= link_to attendance.student.name, attendances_path(:id => attendance.student_id) %></td></tr>
+  <tr><td>Attended On: </td><td><%= attendance.attended_on %></td></tr>
+  <tr><td>Seat: </td><td><%= attendance.seat %></td></tr>
 <% end %>
 </table>

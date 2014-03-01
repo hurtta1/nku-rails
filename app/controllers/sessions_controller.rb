@@ -12,10 +12,20 @@ class SessionsController < ApplicationController
     render "new"
   end
 end
+  
+  def index
+      @students = Student.all
+  end
 
 def destroy
   session[:student_id] = nil
   redirect_to bueller_index_path, :notice => "logged out"
 end
+  
+private
+  def session_params
+    params.require(:session).permit(:email, :password)
+  end
     
 end
+
