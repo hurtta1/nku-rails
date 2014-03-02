@@ -1,19 +1,15 @@
 class AttendancesController < ApplicationController
   
   def index
-    # Check if a student is specified
     if( params[:student_id] )
-      # Get all of this student's attendances
       @selected_student = Student.find( params[:student_id] )
       @attendances = Attendance.where( student: @selected_student )
     else
-      # Show all attendances
       @attendances = Attendance.all
     end
   end
   
   def new
-    # Make sure they're logged in
     @current_student = current_student
     
     if !@current_student
