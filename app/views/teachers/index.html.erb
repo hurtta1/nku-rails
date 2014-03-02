@@ -8,6 +8,13 @@
   </tr>
 <table/>
 
+<h2></h2>
+  <%= form_tag teachers_path, :method => 'get' do %>
+    <p>
+      <%= date_field_tag(:date, @date) %>
+      <%= submit_tag 'search' %>
+    </p>
+<% end %>
   
 <% if params[:attended_on] == nil %>
   <% @date = Date.today %>
