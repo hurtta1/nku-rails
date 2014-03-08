@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-  
   def new 
     @student = Student.new
   end
@@ -7,9 +6,8 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student].permit(:name, :nickname, :email, :gravitar, :password, :password_confirmation))
     if @student.save
+      session[:student_id] = @student.id
       redirect_to students_path
-    else
-      render 'new'
     end
   end
   

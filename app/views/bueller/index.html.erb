@@ -7,3 +7,45 @@
     <th></th>
   </tr>
 </table>
+
+<h2> Students Present Today</h2>
+<table>
+  <tr>
+    <td>
+      <% Student.in_seat(1, @date).each do |s1| %>
+        <%= s1.name %>
+        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+      <% end %>
+    </td>
+    <td>
+      <% Student.in_seat(2, @date).each do |s2| %>
+        <%= s2.name %>
+        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>  
+      <% end %>
+    </td>   
+    <td>
+      <% Student.in_seat(3, @date).each do |s3| %>
+        <%= s3.name %>
+        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+      <% end %>  
+    </td>
+    <td>
+      <% Student.in_seat(4, @date).each do |s4| %>
+        <%= s4.name %>
+        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+      <% end %> 
+    </td>
+  </tr>
+</table>
+
+<% @date = Date.today %>
+<h3>Students Absent Today</h3>
+<table>
+   <tr>
+     <td>
+       <% Student.absent(@date).each do |s| %>
+         <%= s.name %>
+       <% end %>
+     </td>
+   </tr>
+</table>
