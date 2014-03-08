@@ -1,6 +1,6 @@
 NkuRails::Application.routes.draw do
   get "welcome/index"
-  resources :posts, :students, :bueller, :teachers, :signin
+  resources :students, :bueller, :teachers, :signin
    root 'welcome#index'
 
   get "logout" => "session#destroy", :to => "logout"
@@ -11,6 +11,7 @@ NkuRails::Application.routes.draw do
   resources :sessions
   resources :session
   resources :attendances
+  resources :assignments
 
 #  get    '/posts/:id(.:format)'  =>   'posts#show'
  #get    '/posts(.:format)'       =>   'posts#index'
