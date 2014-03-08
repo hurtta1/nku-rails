@@ -1,5 +1,14 @@
 <h1>Log in</h1>
-
+  <table>
+    <tr>
+      <th>
+        <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+        <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/>
+        <%= link_to 'New Student', new_student_path %><br/>
+      <th></th>
+    <th></th>
+  </tr>
+<table/>
 <%= form_tag sessions_path do %>
   <div class="field">
     <%= label_tag :email %>
@@ -8,7 +17,6 @@
   <div class="field">
     <%= label_tag :password %>
     <%= password_field_tag :password %>
-  </div>
-  <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-  <div class="actions"><%= submit_tag "Log in" %></div>
+    
+        <div class="actions"><%= submit_tag "Log in" %></div>
 <% end %>

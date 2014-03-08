@@ -19,6 +19,9 @@ class StudentsController < ApplicationController
   
   def index
     @student = Student.all
+    if !@current_student
+      redirect_to new_session_path
+    end
   end
   
   def edit

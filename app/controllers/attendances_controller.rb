@@ -1,6 +1,9 @@
 class AttendancesController < ApplicationController
   
   def index
+    if !@current_student
+      redirect_to new_session_path
+    end
     if( params[:student_id] )
       @selected_student = Student.find( params[:student_id] )
       @attendances = Attendance.where( student: @selected_student )
