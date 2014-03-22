@@ -8,46 +8,46 @@
   </tr>
 <table/>
 
-<h2></h2>
-  <%= form_tag teachers_path, :method => 'get' do %>
-    <p>
-      <%= date_field_tag(:date, @date) %>
-      <%= submit_tag 'search' %>
-    </p>
-<% end %>
-  
-<% if params[:attended_on] == nil %>
+  <% if params[:attended_on] == nil %>
   <% @date = Date.today %>
 <% else %>
   <% @date = params[:attended_on] %>
 <% end %>
-
+  
+<h2></h2>
+  <%= form_tag teachers_path, :method => 'get' do %>
+    <p>
+      <%= date_field_tag(:attended_on, @date) %>
+      <%= submit_tag 'search' %>
+    </p>
+<% end %>
 
 <h2> Students Present Today</h2>
 <table>
   <tr>
     <td>
+      
       <% Student.in_seat(1, @date).each do |s1| %>
         <%= s1.name %>
-        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+        <%= image_tag gravitar_url(s1), :size => "48x48" %><br/>
       <% end %>
     </td>
     <td>
       <% Student.in_seat(2, @date).each do |s2| %>
         <%= s2.name %>
-        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>  
+        <%= image_tag gravitar_url(s2), :size => "48x48" %><br/>  
       <% end %>
     </td>   
     <td>
       <% Student.in_seat(3, @date).each do |s3| %>
         <%= s3.name %>
-        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+        <%= image_tag gravitar_url(s3), :size => "48x48" %><br/>
       <% end %>  
     </td>
     <td>
       <% Student.in_seat(4, @date).each do |s4| %>
         <%= s4.name %>
-        <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+        <%= image_tag gravitar_url(s4), :size => "48x48" %><br/>
       <% end %> 
     </td>
   </tr>
@@ -57,8 +57,9 @@
 <table>
    <tr>
      <td>
-       <% Student.absent(@date).each do |s| %>
-         <%= s.name %>
+       <% Student.absent(@date).each do |sa| %>
+         <%= sa.name %>
+       <%= image_tag gravitar_url(sa), :size => "48x48" %><br/>
        <% end %>
      </td>
    </tr>

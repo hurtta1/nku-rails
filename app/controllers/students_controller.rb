@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  skip_before_filter :require_authentication, only: [:new, :create]
+  
   def new 
     @student = Student.new
   end
@@ -17,9 +19,6 @@ class StudentsController < ApplicationController
   
   def index
     @student = Student.all
-    if !@current_student
-      redirect_to new_session_path
-    end
   end
   
   def edit
