@@ -1,6 +1,12 @@
 <h1>Assignments</h1>
 
 <% if current_student.isAdmin? %>
+  <%= form_tag({action: :upload}, multipart: true) do %>
+  <% if(current_student.isAdmin) %>
+    <%= file_field_tag 'file' %>
+    <%= submit_tag 'upload' %>
+  <% end %>
+<% end %>
   <table>
     <% @student.each do |student|  %>
       <tr>
