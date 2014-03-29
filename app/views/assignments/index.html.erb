@@ -1,0 +1,50 @@
+<h1>Assignments</h1>
+
+<% if current_student.isAdmin? %>
+  <table>
+    <% @student.each do |student|  %>
+      <tr>
+       <td><br/>
+        <%= image_tag gravitar_url(student), :size => "100x100" %><br/>
+        Name: <%= student.name %><br/>
+      </tr>
+      <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Total</th>
+      <th>Percentage</th>
+      </tr>
+      <% @assignment.each do |assignment| %>
+        <tr>
+          <th><%= assignment.assignment_name %></th>
+          <th><%= assignment.score %></th>
+          <th><%= assignment.total %></th>
+          <th><%= assignment.percentage  %>%</th>
+        </tr>
+      <% end %>
+    </table>
+<% else %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th>Total</th>
+      <th>Percentage</th>
+    </tr>
+    <% @assignment.each do |assignment| %>
+      <tr>
+        <td><%= assignment.assignment_name %></td>
+        <td><%= assignment.score %></td>
+        <td><%= assignment.total %></td>
+        <td><%= assignment.percentage %>%</td>
+      </tr>
+    <% end %>
+    <tr>
+      <th>Current Grade</th>
+      <td><%= current_student.assignment.average_percentage(:total, :score) %>%</td>
+    </tr>
+  </table>
+<% end %>
+
+
+<%= link_to 'Back', students_path %>

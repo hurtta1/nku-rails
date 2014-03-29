@@ -22,13 +22,7 @@ class StudentsController < ApplicationController
   end
   
   def edit
-    @student = Student.find(params[:id])
-    if current_student == @student
-      render :edit
-    else 
-      redirect_to bueller_index_path
-    end
-      
+    @student = Student.find(params[:id])     
   end
   
   def update

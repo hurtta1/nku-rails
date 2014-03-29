@@ -1,12 +1,4 @@
 <h1>Teacher Overview</h1>
-<table>
-  <tr>
-    <th><%= link_to 'View Attendances', attendances_path%><br/><%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/><p><p/></th>
-    <th></th>
-    <th></th>
-  </tr>
-<table/>
 
   <% if params[:attended_on] == nil %>
   <% @date = Date.today %>

@@ -1,35 +1,9 @@
 <h1>Students</h1>
-<table>
-  <tr>
-    <th>
-      <%- if current_student.present? -%>
-      <%= link_to 'Logout', session_path(session),method: :delete %><br/>
-      <%= link_to 'View Attendances', attendances_path%><br/>
-      <%= link_to 'I\'m here', new_attendance_path %><br/>
-      <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-      <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/>
-      <th></th>
-    <th></th>
-  </tr>
-<table/>
-  <tr>
-  <th>
-    <%- else -%>
-    <%= link_to 'Sign In', new_session_path %><br/>
-    <%= link_to 'View Attendances', attendances_path%><br/>
-    <%= link_to 'New Student', new_student_path %><br/>
-    <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
-    <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/>
-  <%- end %>
-  <th></th>
-  <th></th>
-  </tr>
-<table/>
- 
+
 <% @student.each do |student|  %>
   <tr>
    <td><br/>
-      <%= image_tag gravitar_url(student), :size => "48x48" %><br/>
+      <%= image_tag gravitar_url(student), :size => "100x100" %><br/>
       Name: <%= student.name %><br/>
       Nickname: <%= student.nickname %><br/>
       Email: <%= student.email %><br/>
@@ -40,4 +14,3 @@
   
   
 <% end %>
-</table>

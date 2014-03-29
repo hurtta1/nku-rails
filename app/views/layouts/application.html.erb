@@ -10,8 +10,34 @@
   <% end %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div>
+    <table>
+      <tr>
+        <tr>
+      <%='LOG IN WITH THIS!! > email- admin@admin.com password- admin'%><br/>
+      <%- if current_student.present? -%>
+        <%= link_to 'Logout', session_path(session),method: :delete %><br/>
+        <%= link_to 'View Attendances', attendances_path%><br/>
+        <%= link_to 'I\'m here', new_attendance_path %><br/>
+        <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+        <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/>
+        <%- if current_student.isAdmin? -%>
+          <%= link_to 'Assignments ', assignments_path %> <br/>       
+          <%= link_to 'Create Assignment ', new_assignment_path %><br/>
+        <%- else -%>
+        <%= link_to 'My Assignments ', assignments_path %>
+        <%- end %>
+    <%- else -%>
+    <%= link_to 'Sign In', new_session_path %><br/>
+    <%= link_to 'View Attendances', attendances_path%><br/>
+    <%= link_to 'New Student', new_student_path %><br/>
+    <%= link_to 'Back to Bueller Home', bueller_index_path %><br/>
+    <%= link_to 'Back to CSC Projects Home', welcome_index_path %><br/>
+  <%- end %> 
+      <tr>
+      </tr>
+      </table>
+<%= yield %>         
+</div>
 </body>
 </html>

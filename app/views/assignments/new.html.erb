@@ -1,0 +1,40 @@
+<h1>Create Assignment</h1>
+<%= form_for @assignment do |a| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited
+          this post from being saved:</h2>
+      <ul>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+     </div>
+  <% end %>
+  <% @student_array = Student.all.to_a %>
+  <% @name_array = [] %>
+  <% @student_array.each { |s| @name_array.push(s.name) } %>
+  <p>
+    <%= a.label :student %><br>
+     <%= select(:student, :student_id, @name_array) %>
+  </p>
+
+  <p>
+    <%= a.label :Name %><br>
+    <%= a.text_field :assignment_name %>
+  </p>
+
+  <p>
+    <%= a.label :Score %><br>
+    <%= a.text_field :score %>
+  </p>
+
+  <p>
+    <%= a.label :Total %><br>
+    <%= a.text_field :total %>
+  </p>
+
+  <p>
+    <%= a.submit %>
+  </p>
+<% end %>

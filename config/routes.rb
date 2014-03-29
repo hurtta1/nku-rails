@@ -1,6 +1,6 @@
 NkuRails::Application.routes.draw do
   get "welcome/index"
-  resources :students, :bueller, :teachers, :signin
+  resources :students, :bueller, :teachers, :signin, :assignments
    root 'welcome#index'
 
   get "logout" => "session#destroy", :to => "logout"
