@@ -17,5 +17,6 @@ class Uploader < ActiveRecord::Base
       assignment_count += 1
       Assignment.create(student_id: @student.id,  assignment_name: row["assignment_name"], total: row["total"], score: row["score"])
     end
+      return assignment_count
   end 
 end
